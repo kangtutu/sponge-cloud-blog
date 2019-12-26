@@ -1,2 +1,16 @@
 server:
   port: 9001
+# Eureka服务提供者配置文件
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka9100.com:9100/eureka/,http://eureka9101.com:9101/eureka/,http://eureka9102.com:9102/eureka/  # 修改注册中心集群配置，将服务注册进eureka集群中的每个节点中
+  instance:
+    instance-id: sponge-cloud-blogs  # 修改注册中心当前服务提供者的服务id名
+    prefer-ip-address: true  # 访问路径可以显示IP地址
+
+info: # 此标签下的数据名自定义即可
+  app.name: sponge-cloud-blogs
+  company.name: www.spong-k.tech
+  build.artifactId: $project.artifactId$  # 此配置项不好使，后期查找原因进行修复!!!
+  build.version: $project.version$        # 此配置项不好使，后期查找原因进行修复!!!
