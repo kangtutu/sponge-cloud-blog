@@ -1,0 +1,11 @@
+package tech.sponge.cloud.activity;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpongeCloudActivityApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SpongeCloudActivityApplication.class,args);
+    }
+}
