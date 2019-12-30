@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.sponge.cloud.blogs.mapper.SpongeCloudBlogMapper;
 import tech.sponge.cloud.blogs.service.SpongeCloudBlogService;
+import tech.sponge.cloud.common.pojo.sdo.SpongeBlog;
+
+import java.util.List;
 
 @Service
 @Slf4j
@@ -15,4 +18,13 @@ public class SpongeCloudBlogServiceImpl implements SpongeCloudBlogService {
     private SpongeCloudBlogMapper spongeCloudBlogMapper;
 
 
+    @Override
+    public List<SpongeBlog> getSpongeBlogAll() {
+        return null;
+    }
+
+    @Override
+    public SpongeBlog getSpongeBlogById(Integer blogId) {
+        return null;
+    }
 }

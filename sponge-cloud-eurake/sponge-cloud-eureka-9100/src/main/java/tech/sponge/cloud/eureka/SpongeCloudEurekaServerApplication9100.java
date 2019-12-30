@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
-@EnableEurekaServer
-public class SpongeCloudEurekaApplication9100 {
+@EnableEurekaServer //开启 SpringCloud Eureka 注册中心自动配置
+public class SpongeCloudEurekaServerApplication9100 {
     public static void main(String[] args) {
-        SpringApplication.run(SpongeCloudEurekaApplication9100.class,args);
+        SpringApplication.run(SpongeCloudEurekaServerApplication9100.class,args);
     }
 }

@@ -1,7 +1,10 @@
 package tech.sponge.cloud.blogs.controller;
 
+import com.netflix.discovery.converters.Auto;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import tech.sponge.cloud.common.pojo.sdo.SpongeBlog;
 import tech.sponge.cloud.common.pojo.svo.ResponseResult;
 
@@ -9,6 +12,17 @@ import tech.sponge.cloud.common.pojo.svo.ResponseResult;
 @RequestMapping("/blog")
 @Slf4j
 public class SpongeCloudBlogController {
+
+    //访问地址前缀
+    private static final String REST_URL_PRFIX="http://注册中心中微服务名称";
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @GetMapping("/rest")
+    public ResponseResult testRest(){
+        return restTemplate.getForObject(REST_URL_PRFIX+"/test",ResponseResult.class);
+    }
 
     @PostMapping("/save")
     public ResponseResult saveBlog(@RequestBody SpongeBlog spongeBlog){
